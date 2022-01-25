@@ -6,5 +6,4 @@ const currentTime = function ({ seconds }) {
 };
 player.on('timeupdate', throttle(currentTime, 1000));
 const getCurrentTime = localStorage.getItem('videoplayer-current-time');
-console.log(getCurrentTime);
 player.on('play',player.setCurrentTime(getCurrentTime));
