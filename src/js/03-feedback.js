@@ -6,11 +6,9 @@ const refs = {
 };
 const STORAGE_KEY ='feedback-form-state';
 const formData = {};
-
 refs.form.addEventListener('submit', onFormSubmit);
 refs.inputEmail.addEventListener('input', throttle(onInputEmail,500));
 refs.textarea.addEventListener('input', throttle(onInputTextarea,500));
-
 function onFormSubmit(e) {
     e.preventDefault();
     console.log('відправили форму');
@@ -29,7 +27,6 @@ function onInputTextarea(e) {
 function populateTextarea() {
     const saveMessage = localStorage.getItem(STORAGE_KEY);
     const parseMessage = JSON.parse(saveMessage);
-    console.log(parseMessage.message);
     if (parseMessage.message) {
         refs.textarea.value = parseMessage.message;
     }
