@@ -4,11 +4,14 @@ const refs = {
   inputEmail: document.querySelector('input'),
   textarea: document.querySelector('textarea'),
 };
+
 const STORAGE_KEY = 'feedback-form-state';
 const formData = {};
+
 refs.form.addEventListener('submit', onFormSubmit);
 refs.inputEmail.addEventListener('input', throttle(onInputEmail, 500));
 refs.textarea.addEventListener('input', throttle(onInputTextarea, 500));
+
 function onFormSubmit(e) {
   e.preventDefault();
   console.log('відправили форму');
