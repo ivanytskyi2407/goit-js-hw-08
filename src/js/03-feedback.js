@@ -14,7 +14,6 @@ refs.textarea.addEventListener('input', throttle(onInputTextarea, 500));
 
 function onFormSubmit(e) {
   e.preventDefault();
-  console.log('відправили форму');
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
   console.log(formData);
